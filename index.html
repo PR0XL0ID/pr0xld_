@@ -122,14 +122,6 @@
             document.getElementById("partnerModal").style.display = "none";
         }
 
-        function openAppsModal() {
-            document.getElementById("appsModal").style.display = "block";
-        }
-
-        function closeAppsModal() {
-            document.getElementById("appsModal").style.display = "none";
-        }
-
         function filterGames() {
             const searchQuery = document.querySelector('.search-bar').value.toLowerCase();
             const gameCards = document.querySelectorAll('.game-card');
@@ -147,15 +139,12 @@
             const gameModal = document.getElementById("gameModal");
             const proxyModal = document.getElementById("proxyModal");
             const partnerModal = document.getElementById("partnerModal");
-            const appsModal = document.getElementById("appsModal");
             if (event.target == gameModal) {
                 closeModal();
             } else if (event.target == proxyModal) {
                 closeProxyModal();
             } else if (event.target == partnerModal) {
                 closePartnerModal();
-            } else if (event.target == appsModal) {
-                closeAppsModal();
             }
         };
 
@@ -193,7 +182,6 @@
             <a href="#">Games</a>
             <a href="#" onclick="openProxyModal()">Proxy</a>
             <a href="#" onclick="openPartnerModal()">Partners</a>
-            <a href="#" onclick="openAppsModal()">Apps</a>
             <div class="search-container">
                 <input type="text" class="search-bar" placeholder="Search games..." oninput="filterGames()">
             </div>
@@ -248,18 +236,6 @@
             <div class="partner-card" onclick="window.open('https://pr0xime.w3spaces.com', '_blank')">
                 <img src="https://i.ibb.co/SBMyMJk/IG5-J0n-Jt6rop-O5p-ZIe-F7hq-Qo-N8i-BEu-Tq-Ty4h-MHUtp89-B9ox-JA.webp" alt="PR0XIME">
                 <h3>PR0XIME</h3>
-            </div>
-        </div>
-    </div>
-
-    <!-- Apps Modal -->
-    <div id="appsModal" class="modal">
-        <div class="modal-content proxy-modal-content">
-            <span class="close" onclick="closeAppsModal()">×</span>
-            <h2>Apps</h2>
-            <div class="partner-card" onclick="openModal('https://evgeny-nadymov.github.io/telegram-react/', 'Telegram'); closeAppsModal();">
-                <img src="https://th.bing.com/th/id/OIP.HIonTJqA2V-O2dwvK5Tn6gHaHa?w=176&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Telegram">
-                <h3>Telegram</h3>
             </div>
         </div>
     </div>
