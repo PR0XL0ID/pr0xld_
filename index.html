@@ -122,7 +122,6 @@
             document.getElementById("partnerModal").style.display = "none";
         }
 
-        // Updated to include apps functionality
         function openAppsModal() {
             document.getElementById("appsModal").style.display = "block";
         }
@@ -182,21 +181,6 @@
                 card.innerHTML = `<img src="${game.img}" alt="${game.title}"><h3>${game.title}</h3>`;
                 gameContainer.appendChild(card);
             });
-
-            // Apps section
-            const appsContainer = document.getElementById("appsContainer");
-            const apps = [
-                { title: "Telegram", url: "https://evgeny-nadymov.github.io/telegram-react/", img: "https://th.bing.com/th/id/OIP.HIonTJqA2V-O2dwvK5Tn6gHaHa?w=180&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" },
-                // Additional apps can be added here
-            ];
-
-            apps.forEach(app => {
-                const card = document.createElement('div');
-                card.className = 'partner-card';
-                card.onclick = () => openModal(app.url, app.title);
-                card.innerHTML = `<img src="${app.img}" alt="${app.title}"><h3>${app.title}</h3>`;
-                appsContainer.appendChild(card);
-            });
         };
     </script>
 </head>
@@ -222,14 +206,11 @@
     
     <div class="game-container" id="gameContainer"></div>
 
-    <!-- Apps Container -->
-    <div class="game-container" id="appsContainer"></div>
-
     <!-- Game Modal -->
     <div id="gameModal" class="modal">
         <div id="modal-content" class="modal-content">
             <span class="close" onclick="closeModal()">×</span>
-            <h2 id="modal-title">App Title</h2>
+            <h2 id="modal-title">Game Title</h2>
             <iframe id="game-iframe" src="" allowfullscreen></iframe>
             <button class="fullscreen-btn" onclick="toggleFullscreen('game-iframe')">Fullscreen</button>
         </div>
@@ -264,9 +245,21 @@
         <div class="modal-content proxy-modal-content">
             <span class="close" onclick="closePartnerModal()">×</span>
             <h2>Partners</h2>
-            <div class="partner-card" onclick="openModal('https://pr0xime.w3spaces.com', '_blank')">
+            <div class="partner-card" onclick="window.open('https://pr0xime.w3spaces.com', '_blank')">
                 <img src="https://i.ibb.co/SBMyMJk/IG5-J0n-Jt6rop-O5p-ZIe-F7hq-Qo-N8i-BEu-Tq-Ty4h-MHUtp89-B9ox-JA.webp" alt="PR0XIME">
                 <h3>PR0XIME</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- Apps Modal -->
+    <div id="appsModal" class="modal">
+        <div class="modal-content proxy-modal-content">
+            <span class="close" onclick="closeAppsModal()">×</span>
+            <h2>Apps</h2>
+            <div class="partner-card" onclick="openModal('https://evgeny-nadymov.github.io/telegram-react/', 'Telegram'); closeAppsModal();">
+                <img src="https://th.bing.com/th/id/OIP.HIonTJqA2V-O2dwvK5Tn6gHaHa?w=176&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Telegram">
+                <h3>Telegram</h3>
             </div>
         </div>
     </div>
