@@ -245,7 +245,7 @@
         <div class="modal-content proxy-modal-content">
             <span class="close" onclick="closePartnerModal()">×</span>
             <h2>Partners</h2>
-            <div class="partner-card" onclick="window.open('https://pr0xime.w3spaces.com', '_blank')">
+            <div class="partner-card" onclick="openModal('https://pr0xime.w3spaces.com', '_blank')">
                 <img src="https://i.ibb.co/SBMyMJk/IG5-J0n-Jt6rop-O5p-ZIe-F7hq-Qo-N8i-BEu-Tq-Ty4h-MHUtp89-B9ox-JA.webp" alt="PR0XIME">
                 <h3>PR0XIME</h3>
             </div>
@@ -258,9 +258,10 @@
             <span class="close" onclick="closeAppsModal()">×</span>
             <h2>Apps</h2>
             <div class="partner-card" onclick="openModal('https://evgeny-nadymov.github.io/telegram-react/', 'Telegram'); closeAppsModal();">
-                <iframe src="https://evgeny-nadymov.github.io/telegram-react/" style="border: none; width: 100%; height: 100%; margin: 0px;"></iframe>
                 <h3>Telegram</h3>
             </div>
+            <!-- Embed Telegram app in the modal -->
+            <iframe id="telegram-iframe" src="https://evgeny-nadymov.github.io/telegram-react/" style="border: none; width: 100%; height: 480px; border-radius: 8px; background-color: #000;"></iframe>
         </div>
     </div>
 
