@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,8 +8,8 @@
     <style>
         body {
             font-family: 'Roboto', sans-serif;
-            background: linear-gradient(180deg, #1a1a1a, #0e0e0e);
-            color: #FF5733;
+            background: linear-gradient(180deg, #2b2b2b, #1a1a1a);
+            color: #E6E6E6;
             margin: 0;
             padding: 0;
             animation: fadeIn 1s forwards;
@@ -18,13 +17,8 @@
         }
 
         @keyframes fadeIn {
-            from {
-                opacity: 0
-            }
-
-            to {
-                opacity: 1
-            }
+            from { opacity: 0 }
+            to { opacity: 1 }
         }
 
         header {
@@ -34,19 +28,20 @@
             padding: 15px 30px;
             background: rgba(30, 30, 30, 0.9);
             border-bottom: 3px solid #FF5733;
-            box-shadow: 0 4px 20px rgba(255, 0, 0, 0.5);
+            box-shadow: 0 4px 20px rgba(255, 0, 0, 0.7);
         }
 
         header img {
             height: 50px;
             margin-right: 20px;
+            filter: drop-shadow(0 0 5px rgba(255, 0, 0, 0.5));
         }
 
         h1 {
             font-size: 2.5em;
             color: #FF5733;
             margin: 0;
-            text-shadow: 1px 1px 10px rgba(255, 0, 0, 0.7);
+            text-shadow: 1px 1px 15px rgba(255, 0, 0, 0.7);
         }
 
         .top-menu {
@@ -55,23 +50,21 @@
         }
 
         .top-menu a {
-            color: #FF5733;
+            color: #E6E6E6;
             text-decoration: none;
             padding: 12px 20px;
             margin: 0 10px;
             border-radius: 5px;
-            transition: all 0.3s;
-            background-color: #333;
             font-weight: bold;
-            position: relative;
-            font-size: 1.1em;
+            background-color: #333;
+            transition: all 0.3s ease;
         }
 
         .top-menu a:hover {
             background-color: #FF5733;
             color: black;
-            transform: scale(1.1) translateY(-3px);
-            box-shadow: 0 8px 20px rgba(255, 0, 0, 0.5);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 0, 0, 0.6);
         }
 
         .search-container {
@@ -82,20 +75,22 @@
             padding: 10px;
             border: none;
             border-radius: 5px;
-            width: 200px;
+            width: 220px;
             transition: background-color 0.3s;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #E6E6E6;
         }
 
         .search-bar:focus {
             outline: none;
-            background-color: #e0e0e0;
-            color: black;
+            background-color: rgba(255, 255, 255, 0.3);
+            color: #E6E6E6;
         }
 
         .discord-section {
-            margin-left: 20px;
             display: flex;
             align-items: center;
+            margin-left: 20px;
         }
 
         .discord-section p {
@@ -112,8 +107,9 @@
             padding: 8px 15px;
             margin-left: 10px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: background-color 0.6s;
             font-size: 1em;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
         }
 
         .discord-button:hover {
@@ -121,12 +117,12 @@
         }
 
         .game-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 20px;
             margin: 20px auto;
-            max-width: 1200px;
             padding: 20px;
+            max-width: 1200px;
         }
 
         .game-card {
@@ -134,16 +130,17 @@
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 4px 20px rgba(255, 0, 0, 0.3);
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
             text-align: center;
             cursor: pointer;
             opacity: 0;
-            animation: fadeIn 0.5s forwards;
+            animation: fadeIn 0.6s forwards;
         }
 
         .game-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(255, 0, 0, 0.5);
+            box-shadow: 0 8px 30px rgba(255, 0, 0, 0.6);
+            background: rgba(255, 255, 255, 0.15);
         }
 
         .game-card img {
@@ -156,7 +153,7 @@
         .game-card h3 {
             padding: 10px;
             margin: 0;
-            font-size: 1.2em;
+            font-size: 1.2em;  
             color: #FF5733;
         }
 
@@ -180,7 +177,7 @@
             background-color: rgba(30, 30, 30, 0.9);
             border-radius: 10px;
             max-width: 800px;
-            box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
         }
 
         .close {
@@ -201,7 +198,7 @@
             height: 480px;
             border: none;
             border-radius: 8px;
-            background-color: #000;
+            background-color: black;
         }
 
         .fullscreen-btn {
@@ -211,20 +208,24 @@
             border-radius: 5px;
             padding: 10px 15px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.3s;
+            display: block;
+            margin: 20px auto;
+            text-align: center;
         }
 
         .fullscreen-btn:hover {
             background-color: #c0392b;
+            transform: translateY(-2px);
         }
 
         footer {
             text-align: center;
             margin: 30px 0;
             font-size: 1em;
-            color: #FF5733;
+            color: #E6E6E6;
             padding: 10px;
-            background: rgba(30, 30, 30, 0.8);
+            background: rgba(30, 30, 30, 0.9);
             border-top: 3px solid #FF5733;
         }
 
@@ -234,20 +235,20 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
-            width: 200px;
+            width: 220px;
             margin: 10px;
             background-color: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
             padding: 10px;
             transition: transform 0.3s, box-shadow 0.3s;
             opacity: 0;
-            animation: fadeIn 0.5s forwards;
+            animation: fadeIn 0.6s forwards;
         }
 
         .partner-card:hover,
         .proxy-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(255, 0, 0, 0.5);
+            box-shadow: 0 8px 30px rgba(255, 0, 0, 0.6);
         }
 
         .partner-card img,
@@ -267,9 +268,10 @@
         }
 
         .proxy-card-rummerhead {
-            background-color: white;
+            background-color: #ffffff;
             border-radius: 10px;
             padding: 10px;
+            color: black;
         }
 
         .modal-rummerhead .modal-content {
@@ -286,11 +288,16 @@
 
             .search-container {
                 margin-left: 0;
+                margin-bottom: 10px;
+            }
+
+            .discord-button {
+                margin-top: 10px;
             }
         }
     </style>
     <script>
-        // Prevent right-click and certain keys
+        // Prevent right-click context menu and certain key combinations
         if (window.location !== window.parent.location) {
             window.location.href = 'https://real-pr0xld.w3spaces.com/';
         }
@@ -316,17 +323,18 @@
             { title: "Adventure Capitalist", url: "https://than1089.github.io/adventure-capitalist/", img: "https://th.bing.com/th/id/OIP.nOmO6v-5t9DjxsdTORHlbQHaD0?w=297&h=179&c=7&r=0&o=5&dpr=1.3&pid=1.7" },
             { title: "THE BINDING OF ISAAC", url: "https://jubarea.github.io/TBOI-Lite/src/raw.html", img: "https://th.bing.com/th/id/OIP.cwiyIxSRNmjVp2CxsZCq5QHaG5?w=199&h=186&c=7&r=0&o=5&dpr=1.3&pid=1.7" },
             { title: "Idle Digging Tycoon", url: "https://lnahtml.github.io/a5/idle-digging-tycoon/", img: "https://th.bing.com/th/id/OIP.51vsxBIkVWi_oZn38UwqhgAAAA?w=183&h=183&c=7&r=0&o=5&dpr=1.3&pid=1.7" },
-            { title: "Drive Mad", url: "https://lnahtml.github.io/a77/drive-mad/ ", img: "https://th.bing.com/th/id/OIP.7tW_pC2BrRf_gggcF18WqAHaHa?w=157&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" },
-            { title: "Murder The King", url: "https://lnahtml.github.io/a5/murder/ ", img: "https://th.bing.com/th/id/OIP.p-sQs9vRFS7p0cEUO4i_xAHaHa?w=147&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" },
-            { title: "Idle Lumber Inc", url: "https://lnahtml.github.io/a5/idle-lumber-inc/ ", img: "https://th.bing.com/th/id/OIP.kmgIeK5Qlh49p3wXG5AwrgHaHa?w=177&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" },
-            { title: "Masked Forces", url: "https://lnahtml.github.io/a8/masked-forces/ ", img: "https://th.bing.com/th/id/OIP.Fkg7dQHRN6t-8VPjJZK13wHaEK?w=282&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" },
-            { title: "Tiny Fishing", url: "https://lnahtml.github.io/a/tiny-fishing/ ", img: "https://th.bing.com/th/id/OIP._Oy1ClBqWXwQZibQZqrx4AHaHa?w=181&h=181&c=7&r=0&o=5&dpr=1.3&pid=1.7" },
-            { title: "Rocket Soccer Derby", url: "https://lnahtml.github.io/a6/rocket-soccer-derby/ ", img: "https://th.bing.com/th/id/OIP.hwojnPzIcL7P64EVhy8SvgHaHa?w=172&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" },
-            { title: "Monkey Market", url: "https://hva2021.github.io/monkey-mart/index.html  ", img: "https://th.bing.com/th/id/OIP.SU9jM6nWOy0iK6rCaJDEtAHaHa?w=166&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" },
-            { title: "Idle Ants", url: "https://lnahtml.github.io/a5/idle-ants/  ", img: "http://ts4.mm.bing.net/th?id=OIP.RrlGxRJgRE-DbAJBgnc3ZwHaHa&pid=15.1" },
-            { title: "Monster Tracks", url: "https://lnahtml.github.io/a5/monster-tracks/  ", img: "https://th.bing.com/th/id/OIP.UICL-bvWA_9u0K7lT10g-QHaHa?w=159&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" },
+            { title: "Drive Mad", url: "https://lnahtml.github.io/a77/drive-mad/", img: "https://th.bing.com/th/id/OIP.7tW_pC2BrRf_gggcF18WqAHaHa?w=157&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" },
+            { title: "Murder The King", url: "https://lnahtml.github.io/a5/murder/", img: "https://th.bing.com/th/id/OIP.p-sQs9vRFS7p0cEUO4i_xAHaHa?w=147&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" },
+            { title: "Idle Lumber Inc", url: "https://lnahtml.github.io/a5/idle-lumber-inc/", img: "https://th.bing.com/th/id/OIP.kmgIeK5Qlh49p3wXG5AwrgHaHa?w=177&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" },
+            { title: "Masked Forces", url: "https://lnahtml.github.io/a8/masked-forces/", img: "https://th.bing.com/th/id/OIP.Fkg7dQHRN6t-8VPjJZK13wHaEK?w=282&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" },
+            { title: "Tiny Fishing", url: "https://lnahtml.github.io/a/tiny-fishing/", img: "https://th.bing.com/th/id/OIP._Oy1ClBqWXwQZibQZqrx4AHaHa?w=181&h=181&c=7&r=0&o=5&dpr=1.3&pid=1.7" },
+            { title: "Rocket Soccer Derby", url: "https://lnahtml.github.io/a6/rocket-soccer-derby/", img: "https://th.bing.com/th/id/OIP.hwojnPzIcL7P64EVhy8SvgHaHa?w=172&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" },
+            { title: "Monkey Market", url: "https://hva2021.github.io/monkey-mart/index.html", img: "https://th.bing.com/th/id/OIP.SU9jM6nWOy0iK6rCaJDEtAHaHa?w=166&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" },
+            { title: "Idle Ants", url: "https://lnahtml.github.io/a5/idle-ants/", img: "http://ts4.mm.bing.net/th?id=OIP.RrlGxRJgRE-DbAJBgnc3ZwHaHa&pid=15.1" },
+            { title: "Monster Tracks", url: "https://lnahtml.github.io/a5/monster-tracks/", img: "https://th.bing.com/th/id/OIP.UICL-bvWA_9u0K7lT10g-QHaHa?w=159&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" },
         ];
 
+        // Open modal for game details
         function openModal(gameUrl, gameTitle, isRummerhead = false) {
             document.getElementById("game-iframe").src = gameUrl;
             document.getElementById("modal-title").innerText = gameTitle;
@@ -339,37 +347,39 @@
             document.getElementById("gameModal").style.display = "block";
         }
 
+        // Close modal
         function closeModal() {
             document.getElementById("game-iframe").src = "";
             document.getElementById("gameModal").style.display = "none";
         }
 
+        // Open Proxy Modal
         function openProxyModal() {
             document.getElementById("proxyModal").style.display = "block";
         }
 
+        // Close Proxy Modal
         function closeProxyModal() {
             document.getElementById("proxyModal").style.display = "none";
         }
 
+        // Open Partner Modal
         function openPartnerModal() {
             document.getElementById("partnerModal").style.display = "block";
         }
 
+        // Close Partner Modal
         function closePartnerModal() {
             document.getElementById("partnerModal").style.display = "none";
         }
 
+        // Filter game cards
         function filterGames() {
             const searchQuery = document.querySelector('.search-bar').value.toLowerCase();
             const gameCards = document.querySelectorAll('.game-card');
             gameCards.forEach(card => {
                 const title = card.querySelector('h3').innerText.toLowerCase();
-                if (title.includes(searchQuery)) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
+                card.style.display = title.includes(searchQuery) ? 'block' : 'none';
             });
         }
 
@@ -387,6 +397,7 @@
             }
         };
 
+        // Toggle Fullscreen
         function toggleFullscreen(iframeId) {
             const iframe = document.getElementById(iframeId);
             if (iframe.requestFullscreen) {
@@ -400,6 +411,7 @@
             }
         }
 
+        // Load game cards on page
         window.onload = function() {
             const gameContainer = document.getElementById("gameContainer");
             games.forEach(game => {
@@ -408,14 +420,13 @@
                 card.onclick = () => openModal(game.url, game.title);
                 card.innerHTML = `<img src="${game.img}" alt="${game.title}"><h3>${game.title}</h3>`;
                 gameContainer.appendChild(card);
-
+                
                 // Add a delay for animation
                 card.style.animationDelay = `${Math.random() * 0.5}s`;
             });
         };
     </script>
 </head>
-
 <body>
     <header>
         <img src="https://lh6.googleusercontent.com/yj86qfbuVJpUPMD8mZiYUw1KnVWDI6TgYw-jsgcR8sIxsLpcjEeXCKIOhSkOlzdfc6kpdHrad8r_xHkJRKNZo6E=w16383" alt="PR0XLD Logo">
@@ -487,5 +498,4 @@
         <p>© 2024 PR0XLD. All rights reserved.</p>
     </footer>
 </body>
-
 </html>
