@@ -358,6 +358,12 @@
             modal.style.display = (modal.style.display === "block") ? "none" : "block";
         }
 
+        // Open/Close Links Modal
+        function toggleLinksModal() {
+            const modal = document.getElementById("linksModal");
+            modal.style.display = (modal.style.display === "block") ? "none" : "block";
+        }
+
         // Filter game cards
         function filterGames() {
             const searchQuery = document.querySelector('.search-bar').value.toLowerCase();
@@ -373,10 +379,12 @@
             const gameModal = document.getElementById("gameModal");
             const proxyModal = document.getElementById("proxyModal");
             const partnerModal = document.getElementById("partnerModal");
+            const linksModal = document.getElementById("linksModal");
 
             if (event.target === gameModal) closeModal();
             if (event.target === proxyModal) toggleProxyModal();
             if (event.target === partnerModal) togglePartnerModal();
+            if (event.target === linksModal) toggleLinksModal();
         };
 
         // Toggle Fullscreen
@@ -414,6 +422,7 @@
         <img src="https://lh6.googleusercontent.com/yj86qfbuVJpUPMD8mZiYUw1KnVWDI6TgYw-jsgcR8sIxsLpcjEeXCKIOhSkOlzdfc6kpdHrad8r_xHkJRKNZo6E=w16383" alt="PR0XLD Logo">
         <h1>PR0XLD</h1>
         <div class="top-menu">
+            <a href="#" onclick="toggleLinksModal()">Links</a>
             <a href="#" onclick="toggleProxyModal()">Proxy</a>
             <a href="#" onclick="togglePartnerModal()">Partners</a>
             <div class="search-container">
@@ -477,10 +486,10 @@
     <!-- Links Modal -->
     <div id="linksModal" class="modal">
         <div class="modal-content links-modal-content">
-            <span class="close" onclick="closeLinksModal()">×</span>
+            <span class="close" onclick="toggleLinksModal()">×</span>
             <h2>Links</h2>
             <div class="links-card" onclick="window.open('https://pr0xl0id.github.io/pr0x/', '_blank')">
-                <img src="https://lh3.googleusercontent.com/YyhepsSN92r3PpxaEPtoMkuBimoeerkrbSQR4U7_0UXMcq2T2GfUNAFFHu-qlBCk32BtoI4qEPA8B5vcbz9UXEI=w16383" alt="PR0XIME">
+                <img src="https://lh3.googleusercontent.com/YyhepsSN92r3PpxaEPtoMkuBimoeerkrbSQR4U7_0UXMcq2T2GfUNAFFHu-qlBCk32BtoI4qEPA8B5vcbz9UXEI=w16383" alt="PR0XLD">
                 <h3>PR0XLD</h3>
             </div>
         </div>
