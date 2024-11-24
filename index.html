@@ -8,14 +8,19 @@
     <style>
         body {
             font-family: 'Roboto', sans-serif;
-            background: linear-gradient(180deg, #2B2B2B, #1A1A1A);
+            background: linear-gradient(180deg, #2b2b2b, #1a1a1a);
             color: #E6E6E6;
             margin: 0;
             padding: 0;
+            animation: fadeIn 1s forwards;
             overflow-x: hidden;
-            scroll-behavior: smooth;
-            transition: background-color 0.5s, color 0.5s;
         }
+
+        @keyframes fadeIn {
+            from { opacity: 0 }
+            to { opacity: 1 }
+        }
+
         header {
             display: flex;
             align-items: center;
@@ -25,21 +30,25 @@
             border-bottom: 3px solid #FF5733;
             box-shadow: 0 4px 20px rgba(255, 0, 0, 0.7);
         }
+
         header img {
             height: 50px;
             margin-right: 20px;
             filter: drop-shadow(0 0 5px rgba(255, 0, 0, 0.5));
         }
+
         h1 {
             font-size: 2.5em;
             color: #FF5733;
             margin: 0;
             text-shadow: 1px 1px 15px rgba(255, 0, 0, 0.7);
         }
+
         .top-menu {
             display: flex;
             align-items: center;
         }
+
         .top-menu a {
             color: #E6E6E6;
             text-decoration: none;
@@ -50,15 +59,18 @@
             background-color: #333;
             transition: all 0.3s ease;
         }
+
         .top-menu a:hover {
             background-color: #FF5733;
             color: black;
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(255, 0, 0, 0.6);
         }
+
         .search-container {
             margin-left: 20px;
         }
+
         .search-bar {
             padding: 10px;
             border: none;
@@ -68,21 +80,25 @@
             background-color: rgba(255, 255, 255, 0.1);
             color: #E6E6E6;
         }
+
         .search-bar:focus {
             outline: none;
             background-color: rgba(255, 255, 255, 0.3);
             color: #E6E6E6;
         }
+
         .discord-section {
             display: flex;
             align-items: center;
             margin-left: 20px;
         }
+
         .discord-section p {
             margin: 0;
             font-size: 1em;
             color: #FF5733;
         }
+
         .discord-button {
             background-color: #7289DA;
             color: white;
@@ -95,9 +111,11 @@
             font-size: 1em;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
         }
+
         .discord-button:hover {
             background-color: #5b6eae;
         }
+
         .game-container {
             display: grid; 
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -106,33 +124,39 @@
             padding: 20px;
             max-width: 1200px;
         }
+
         .game-card {
             background: rgba(255, 255, 255, 0.1);
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 4px 20px rgba(255, 0, 0, 0.3);
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
             text-align: center;
             cursor: pointer;
             opacity: 0;
             animation: fadeIn 0.6s forwards;
         }
+
         .game-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 30px rgba(255, 0, 0, 0.6);
+            background: rgba(255, 255, 255, 0.15);
         }
+
         .game-card img {
             width: 100%;
             height: 150px;
             object-fit: cover;
             border-bottom: 3px solid #FF5733;
         }
+
         .game-card h3 {
             padding: 10px;
             margin: 0;
             font-size: 1.2em;  
             color: #FF5733;
         }
+
         .modal {
             display: none;
             position: fixed;
@@ -145,6 +169,7 @@
             background-color: rgba(0, 0, 0, 0.9);
             padding: 20px;
         }
+
         .modal-content {
             position: relative;
             margin: auto;
@@ -154,15 +179,18 @@
             max-width: 800px;
             box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
         }
+
         .close {
             color: #FF5733;
             float: right;
             font-size: 28px;
             font-weight: 700;
         }
+
         .close:hover {
             cursor: pointer;
         }
+
         iframe {
             display: block;
             margin: 20px auto;
@@ -172,6 +200,7 @@
             border-radius: 8px;
             background-color: black;
         }
+
         .fullscreen-btn {
             background-color: #FF5733;
             color: white;
@@ -184,10 +213,12 @@
             margin: 20px auto;
             text-align: center;
         }
+
         .fullscreen-btn:hover {
             background-color: #c0392b;
             transform: translateY(-2px);
         }
+
         footer {
             text-align: center;
             margin: 30px 0;
@@ -197,6 +228,7 @@
             background: rgba(30, 30, 30, 0.9);
             border-top: 3px solid #FF5733;
         }
+
         .partner-card,
         .proxy-card {
             display: flex;
@@ -212,11 +244,13 @@
             opacity: 0;
             animation: fadeIn 0.6s forwards;
         }
+
         .partner-card:hover,
         .proxy-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 30px rgba(255, 0, 0, 0.6);
         }
+
         .partner-card img,
         .proxy-card img {
             width: 100%;
@@ -225,141 +259,55 @@
             max-height: 150px;
             object-fit: cover;
         }
+
         .partner-card h3,
         .proxy-card h3 {
             font-size: 1em;
             margin-top: 5px;
             color: #FF5733;
         }
+
         .proxy-card-rummerhead {
             background-color: #ffffff;
             border-radius: 10px;
             padding: 10px;
             color: black;
         }
+
         .modal-rummerhead .modal-content {
             background-color: white;
             color: black;
         }
-        .dark-mode {
-            background-color: #1a1a1a;
-            color: #e6e6e6;
-        }
-        .dark-mode header, .dark-mode footer {
-            background: rgba(30, 30, 30, 0.9);
-        }
-        .dark-mode .top-menu a {
-            background-color: #333;
-        }
-        .dark-mode .top-menu a:hover {
-            background-color: #FF5733;
-            color: black;
-        }
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: #FF5733;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            padding: 10px 15px;
-            cursor: pointer;
-            display: none;
-            z-index: 100;
-            transition: background-color 0.3s;
-        }
-        .back-to-top:hover {
-            background-color: #c0392b;
-        }
+
         @media (max-width: 600px) {
             .top-menu {
                 flex-direction: column;
                 align-items: center;
                 margin-bottom: 10px;
             }
+
             .search-container {
                 margin-left: 0;
                 margin-bottom: 10px;
             }
+
             .discord-button {
                 margin-top: 10px;
             }
         }
     </style>
-</head>
-<body>
-    <header>
-        <img src="https://lh6.googleusercontent.com/yj86qfbuVJpUPMD8mZiYUw1KnVWDI6TgYw-jsgcR8sIxsLpcjEeXCKIOhSkOlzdfc6kpdHrad8r_xHkJRKNZo6E=w16383" alt="PR0XLD Logo">
-        <h1>PR0XLD</h1>
-        <div class="top-menu">
-            <a href="#">Home</a>
-            <a href="#">Games</a>
-            <a href="#" onclick="openProxyModal()">Proxy</a>
-            <a href="#" onclick="openPartnerModal()">Partners</a>
-            <div class="search-container">
-                <input type="text" class="search-bar" placeholder="Search games..." oninput="filterGames()">
-            </div>
-            <div class="discord-section">
-                <p>JOIN OUR DISCORD FOR MORE LINKS</p>
-                <button class="discord-button" onclick="window.open('https://discord.gg/cv7FVeTvTM', '_blank')">PR0XLD DISCORD</button>
-            </div>
-            <button id="themeToggle" style="margin-left: 10px; background-color: #333; color: #E6E6E6; padding: 10px; border: none; border-radius: 5px;">Toggle Dark Mode</button>
-        </div>
-    </header>
-
-    <div class="game-container" id="gameContainer"></div>
-
-    <div id="gameModal" class="modal">
-        <div id="modal-content" class="modal-content">
-            <span class="close" onclick="closeModal()">×</span>
-            <h2 id="modal-title">Game Title</h2>
-            <iframe id="game-iframe" src="" allowfullscreen></iframe>
-            <button class="fullscreen-btn" onclick="toggleFullscreen('game-iframe')">Fullscreen</button>
-        </div>
-    </div>
-
-    <div id="proxyModal" class="modal">
-        <div class="modal-content proxy-modal-content">
-            <span class="close" onclick="closeProxyModal()">×</span>
-            <h2>Proxy List</h2>
-            <div class="proxy-card" onclick="openModal('https://ghcghkvgh.britishkidsforclimate.club/index.html', 'Art Class'); closeProxyModal();">
-                <img src="https://ghcghkvgh.britishkidsforclimate.club/assets/images/icon.png" alt="Art Class">
-                <h3>Art Class</h3>
-            </div>
-            <div class="proxy-card" onclick="openModal('https://inboxproxy.laviewddns.com/', 'Asteroid'); closeProxyModal();">
-                <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXet_F2SF_4RfLeTewN35SOFgw9JhX1oR8K1gYV0MjB8MK0tPzS3lgTjJ2hN6fsAgNcZufBn4uqhzAfE7aSEKkz0msmgeZ-Hx7bjxp23n2bvyLgk-gH2hdaoivzxvdxiWb0WTH2gJw?key=FXWfXzQs9xvU4EdswylSdMiw" alt="Asteroid">
-                <h3>Asteroid</h3>
-            </div>
-            <div class="proxy-card" onclick="openModal('https://glow.joaopedroreis.com', 'Emerald'); closeProxyModal();">
-                <img src="https://i.ytimg.com/vi/-YwS0vO8qQg/hqdefault.jpg" alt="Emerald">
-                <h3>Emerald</h3>
-            </div>
-            <div class="proxy-card proxy-card-rummerhead" onclick="openModal('https://educational-math-classes.jdx3.org', 'Rummerhead', true); closeProxyModal();">
-                <img src="https://th.bing.com/th/id/OIP.Yy-jUoK551N-VwASMUkLSwHaHa?w=176&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Rummerhead">
-                <h3>Rummerhead</h3>
-            </div>
-        </div>
-    </div>
-
-    <div id="partnerModal" class="modal">
-        <div class="modal-content proxy-modal-content">
-            <span class="close" onclick="closePartnerModal()">×</span>
-            <h2>Partners</h2>
-            <div class="partner-card" onclick="window.open('https://pr0xime.w3spaces.com', '_blank')">
-                <img src="https://i.ibb.co/SBMyMJk/IG5-J0n-Jt6rop-O5p-ZIe-F7hq-Qo-N8i-BEu-Tq-Ty4h-MHUtp89-B9ox-JA.webp" alt="PR0XIME">
-                <h3>PR0XIME</h3>
-            </div>
-        </div>
-    </div>
-
-    <button class="back-to-top" onclick="scrollToTop()">↑</button>
-
-    <footer>
-        <p>© 2024 PR0XLD. All rights reserved.</p>
-    </footer>
-
     <script>
+        // Prevent right-click context menu and certain key combinations
+        if (window.location !== window.parent.location) {
+            window.location.href = 'https://real-pr0xld.w3spaces.com/';
+        }
+        document.addEventListener('contextmenu', event => event.preventDefault());
+        document.addEventListener('keydown', event => {
+            if (event.ctrlKey && (event.key === 'c' || event.key === 'u' || event.key === 'v' || event.key === 'i' || event.key === 'x' || event.key === 'F12')) {
+                event.preventDefault();
+            }
+        });
+
         const games = [
             { title: "Funny Shooter 2", url: "https://hva2021.github.io/funny-shooter-2/index.html", img: "https://th.bing.com/th/id/OIP.7tEmnZcPjxiM5_-N7DB4zwAAAA?w=161&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" },
             { title: "BitLife", url: "https://hva2021.github.io/bitlife/index.html", img: "https://th.bing.com/th/id/OIP.y2QPqlYp0wH2ukOazERp_gHaD9?w=203&h=108&c=7&r=0&o=5&dpr=1.3&pid=1.7" },
@@ -386,78 +334,168 @@
             { title: "Monster Tracks", url: "https://lnahtml.github.io/a5/monster-tracks/", img: "https://th.bing.com/th/id/OIP.UICL-bvWA_9u0K7lT10g-QHaHa?w=159&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" },
         ];
 
+        // Open modal for game details
+        function openModal(gameUrl, gameTitle, isRummerhead = false) {
+            document.getElementById("game-iframe").src = gameUrl;
+            document.getElementById("modal-title").innerText = gameTitle;
+            const modalContent = document.getElementById("modal-content");
+            if (isRummerhead) {
+                modalContent.classList.add('modal-rummerhead');
+            } else {
+                modalContent.classList.remove('modal-rummerhead');
+            }
+            document.getElementById("gameModal").style.display = "block";
+        }
+
+        // Close modal
+        function closeModal() {
+            document.getElementById("game-iframe").src = "";
+            document.getElementById("gameModal").style.display = "none";
+        }
+
+        // Open Proxy Modal
+        function openProxyModal() {
+            document.getElementById("proxyModal").style.display = "block";
+        }
+
+        // Close Proxy Modal
+        function closeProxyModal() {
+            document.getElementById("proxyModal").style.display = "none";
+        }
+
+        // Open Partner Modal
+        function openPartnerModal() {
+            document.getElementById("partnerModal").style.display = "block";
+        }
+
+        // Close Partner Modal
+        function closePartnerModal() {
+            document.getElementById("partnerModal").style.display = "none";
+        }
+
+        // Filter game cards
+        function filterGames() {
+            const searchQuery = document.querySelector('.search-bar').value.toLowerCase();
+            const gameCards = document.querySelectorAll('.game-card');
+            gameCards.forEach(card => {
+                const title = card.querySelector('h3').innerText.toLowerCase();
+                card.style.display = title.includes(searchQuery) ? 'block' : 'none';
+            });
+        }
+
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            const gameModal = document.getElementById("gameModal");
+            const proxyModal = document.getElementById("proxyModal");
+            const partnerModal = document.getElementById("partnerModal");
+            if (event.target == gameModal) {
+                closeModal();
+            } else if (event.target == proxyModal) {
+                closeProxyModal();
+            } else if (event.target == partnerModal) {
+                closePartnerModal();
+            }
+        };
+
+        // Toggle Fullscreen
+        function toggleFullscreen(iframeId) {
+            const iframe = document.getElementById(iframeId);
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.mozRequestFullScreen) {
+                iframe.mozRequestFullScreen();
+            } else if (iframe.webkitRequestFullscreen) {
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) {
+                iframe.msRequestFullscreen();
+            }
+        }
+
+        // Load game cards on page
         window.onload = function() {
             const gameContainer = document.getElementById("gameContainer");
-            games.forEach((game) => {
+            games.forEach(game => {
                 const card = document.createElement('div');
                 card.className = 'game-card';
                 card.onclick = () => openModal(game.url, game.title);
                 card.innerHTML = `<img src="${game.img}" alt="${game.title}"><h3>${game.title}</h3>`;
                 gameContainer.appendChild(card);
+                
+                // Add a delay for animation
                 card.style.animationDelay = `${Math.random() * 0.5}s`;
             });
         };
-
-        function openModal(gameUrl, gameTitle, isRummerhead = false) {
-            document.getElementById("game-iframe").src = gameUrl;
-            document.getElementById("modal-title").innerText = gameTitle;
-            document.getElementById("gameModal").style.display = "block";
-        }
-        function closeModal() {
-            document.getElementById("game-iframe").src = "";
-            document.getElementById("gameModal").style.display = "none";
-        }
-        function openProxyModal() {
-            document.getElementById("proxyModal").style.display = "block";
-        }
-        function closeProxyModal() {
-            document.getElementById("proxyModal").style.display = "none";
-        }
-        function openPartnerModal() {
-            document.getElementById("partnerModal").style.display = "block";
-        }
-        function closePartnerModal() {
-            document.getElementById("partnerModal").style.display = "none";
-        }
-        function filterGames() {
-            const searchQuery = document.querySelector('.search-bar').value.toLowerCase();
-            const gameCards = document.querySelectorAll('.game-card');
-            gameCards.forEach((card) => {
-                const title = card.querySelector('h3').innerText.toLowerCase();
-                card.style.display = title.includes(searchQuery) ? 'block' : 'none';
-            });
-        }
-        window.onclick = function(event) {
-            const gameModal = document.getElementById("gameModal");
-            const proxyModal = document.getElementById("proxyModal");
-            const partnerModal = document.getElementById("partnerModal");
-            if (event.target == gameModal) closeModal();
-            else if (event.target == proxyModal) closeProxyModal();
-            else if (event.target == partnerModal) closePartnerModal();
-        };
-        function toggleFullscreen(iframeId) {
-            const iframe = document.getElementById(iframeId);
-            if (iframe.requestFullscreen) iframe.requestFullscreen();
-            else if (iframe.mozRequestFullScreen) iframe.mozRequestFullScreen();
-            else if (iframe.webkitRequestFullscreen) iframe.webkitRequestFullscreen();
-            else if (iframe.msRequestFullscreen) iframe.msRequestFullscreen();
-        }
-        const themeToggle = document.getElementById('themeToggle');
-        themeToggle.onclick = function() {
-            document.body.classList.toggle('dark-mode');
-            themeToggle.innerText = document.body.classList.contains('dark-mode') ? 'Toggle Light Mode' : 'Toggle Dark Mode';
-        };
-        window.onscroll = function() {
-            const backToTopButton = document.querySelector('.back-to-top');
-            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-                backToTopButton.style.display = "block";
-            } else {
-                backToTopButton.style.display = "none";
-            }
-        };
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
     </script>
+</head>
+<body>
+    <header>
+        <img src="https://lh6.googleusercontent.com/yj86qfbuVJpUPMD8mZiYUw1KnVWDI6TgYw-jsgcR8sIxsLpcjEeXCKIOhSkOlzdfc6kpdHrad8r_xHkJRKNZo6E=w16383" alt="PR0XLD Logo">
+        <h1>PR0XLD</h1>
+        <div class="top-menu">
+            <a href="#">Home</a>
+            <a href="#">Games</a>
+            <a href="#" onclick="openProxyModal()">Proxy</a>
+            <a href="#" onclick="openPartnerModal()">Partners</a>
+            <div class="search-container">
+                <input type="text" class="search-bar" placeholder="Search games..." oninput="filterGames()">
+            </div>
+            <div class="discord-section">
+                <p>JOIN OUR DISCORD FOR MORE LINKS</p>
+                <button class="discord-button" onclick="window.open('https://discord.gg/cv7FVeTvTM', '_blank')">PR0XLD DISCORD</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="game-container" id="gameContainer"></div>
+
+    <!-- Game Modal -->
+    <div id="gameModal" class="modal">
+        <div id="modal-content" class="modal-content">
+            <span class="close" onclick="closeModal()">×</span>
+            <h2 id="modal-title">Game Title</h2>
+            <iframe id="game-iframe" src="" allowfullscreen></iframe>
+            <button class="fullscreen-btn" onclick="toggleFullscreen('game-iframe')">Fullscreen</button>
+        </div>
+    </div>
+
+    <!-- Proxy Modal -->
+    <div id="proxyModal" class="modal">
+        <div class="modal-content proxy-modal-content">
+            <span class="close" onclick="closeProxyModal()">×</span>
+            <h2>Proxy List</h2>
+            <div class="proxy-card" onclick="openModal('https://ghcghkvgh.britishkidsforclimate.club/index.html', 'Art Class'); closeProxyModal();">
+                <img src="https://ghcghkvgh.britishkidsforclimate.club/assets/images/icon.png" alt="Art Class">
+                <h3>Art Class</h3>
+            </div>
+            <div class="proxy-card" onclick="openModal('https://inboxproxy.laviewddns.com/', 'Asteroid'); closeProxyModal();">
+                <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXet_F2SF_4RfLeTewN35SOFgw9JhX1oR8K1gYV0MjB8MK0tPzS3lgTjJ2hN6fsAgNcZufBn4uqhzAfE7aSEKkz0msmgeZ-Hx7bjxp23n2bvyLgk-gH2hdaoivzxvdxiWb0WTH2gJw?key=FXWfXzQs9xvU4EdswylSdMiw" alt="Asteroid">
+                <h3>Asteroid</h3>
+            </div>
+            <div class="proxy-card" onclick="openModal('https://glow.joaopedroreis.com', 'Emerald'); closeProxyModal();">
+                <img src="https://i.ytimg.com/vi/-YwS0vO8qQg/hqdefault.jpg" alt="Emerald">
+                <h3>Emerald</h3>
+            </div>
+            <div class="proxy-card proxy-card-rummerhead" onclick="openModal('https://educational-math-classes.jdx3.org', 'Rummerhead', true); closeProxyModal();">
+                <img src="https://th.bing.com/th/id/OIP.Yy-jUoK551N-VwASMUkLSwHaHa?w=176&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Rummerhead">
+                <h3>Rummerhead</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- Partner Modal -->
+    <div id="partnerModal" class="modal">
+        <div class="modal-content proxy-modal-content">
+            <span class="close" onclick="closePartnerModal()">×</span>
+            <h2>Partners</h2>
+            <div class="partner-card" onclick="window.open('https://pr0xime.w3spaces.com', '_blank')">
+                <img src="https://i.ibb.co/SBMyMJk/IG5-J0n-Jt6rop-O5p-ZIe-F7hq-Qo-N8i-BEu-Tq-Ty4h-MHUtp89-B9ox-JA.webp" alt="PR0XIME">
+                <h3>PR0XIME</h3>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 PR0XLD. All rights reserved.</p>
+    </footer>
 </body>
 </html>
