@@ -31,20 +31,20 @@
         header img { height: 50px; margin-right: 20px; }
         h1 { font-size: 2em; color: #FF5733; margin: 0; text-shadow: 1px 1px 3px rgba(255, 0, 0, 0.5); }
         .top-menu { display: flex; align-items: center; }
-        .top-menu a { 
-            color: #FF5733; 
-            text-decoration: none; 
-            padding: 10px 15px; 
-            margin: 0 10px; 
-            border-radius: 5px; 
-            transition: all 0.3s; 
-            background-color: #333; 
-            font-weight: bold; 
-            position: relative; 
+        .top-menu a {
+            color: #FF5733;
+            text-decoration: none;
+            padding: 10px 15px;
+            margin: 0 10px;
+            border-radius: 5px;
+            transition: all 0.3s;
+            background-color: #333;
+            font-weight: bold;
+            position: relative;
         }
-        .top-menu a:hover { 
-            background-color: #FF5733; 
-            color: black; 
+        .top-menu a:hover {
+            background-color: #FF5733;
+            color: black;
             transform: scale(1.05) translateY(-5px);
             box-shadow: 0 4px 20px rgba(255, 0, 0, 0.5);
         }
@@ -69,7 +69,24 @@
         .fullscreen-btn { background-color: #FF5733; color: white; border: none; border-radius: 5px; padding: 10px 15px; cursor: pointer; transition: background-color 0.3s; }
         .fullscreen-btn:hover { background-color: #c0392b; }
         footer { text-align: center; margin: 30px 0; font-size: 0.9em; color: #FF5733; }
-        .partner-card, .proxy-card { display: flex; flex-direction: column; align-items: center; text-align: center; width: 200px; margin: 10px; }
+        .partner-card, .proxy-card {
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            text-align: center; 
+            width: 200px; 
+            margin: 10px; 
+            background-color: rgba(255, 255, 255, 0.1); 
+            border-radius: 10px; 
+            padding: 10px; 
+            transition: transform 0.3s, box-shadow 0.3s; 
+            opacity: 0; 
+            animation: fadeIn 0.5s forwards;
+        }
+        .partner-card:hover, .proxy-card:hover {
+            transform: translateY(-5px); 
+            box-shadow: 0 8px 30px rgba(255, 0, 0, 0.5);
+        }
         .partner-card img, .proxy-card img { width: 100%; height: auto; border-radius: 10px; max-height: 150px; object-fit: cover; }
         .partner-card h3, .proxy-card h3 { font-size: 1em; margin-top: 5px; color: #FF5733; }
         .proxy-card-rummerhead { background-color: white; border-radius: 10px; padding: 10px; }
