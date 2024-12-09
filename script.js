@@ -13,6 +13,7 @@ document.addEventListener('keydown', event => {
 const games = [
     { title: "Funny Shooter 2", url: "https://hva2021.github.io/funny-shooter-2/index.html", img: "https://th.bing.com/th/id/OIP.7tEmnZcPjxiM5_-N7DB4zwAAAA?w=161&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" },
     { title: "BitLife", url: "https://hva2021.github.io/bitlife/index.html", img: "https://th.bing.com/th/id/OIP.y2QPqlYp0wH2ukOazERp_gHaD9?w=203&h=108&c=7&r=0&o=5&dpr=1.3&pid=1.7" },
+     { title: "Slice It", url: "https://www.hoodamath.com/mobile/games/hooda-slice-it/game.html?nocheckorient=1", img: "https://th.bing.com/th/id/OIP.dS_qc2C-LlPpIuaaAiR8WAHaJ8?w=134&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" },
     { title: "Moto X3M", url: "https://hva2021.github.io/motox3m/index.html", img: "https://th.bing.com/th/id/OIP.cExtHlhTh9EW1tYkhytnjgHaDn?w=325&h=170&c=7&r=0&o=5&dpr=1.3&pid=1.7" },
     { title: "Cookie Clicker", url: "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/bobydob/JSEngine@e7d53b913d54429e5e118ca9541fb0f8f1f66bdc/dist/cc.xml&container=ig", img: "https://th.bing.com/th/id/OIP.WTjaE48gkjv6H3m66O1aMAHaHa?w=171&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" },
     { title: "Cluster Rush", url: "https://script.google.com/macros/s/AKfycbw6e8fflbfydV7kom5id09nKaM6ix0hLlXHbs3XHOnxzrndUgPtHUHENrwKomI2Hpk3/exec", img: "https://th.bing.com/th/id/OIP.L0FigzedLyiRDDmqGciw_QHaHa?w=174&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" },
